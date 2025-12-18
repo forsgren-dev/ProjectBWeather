@@ -13,7 +13,7 @@ namespace MauiProjectBWeather.Services
 {
     public class OpenWeatherService
     {
-        readonly string _apiKey = "your-api-key";
+        readonly string _apiKey = "e0907403b9e636533faefbfe0d854a7b";
 
         readonly HttpClient _httpClient = new HttpClient();
         readonly string _apiUri = "https://api.openweathermap.org/data/2.5/forecast";
