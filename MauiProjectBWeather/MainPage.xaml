@@ -11,7 +11,7 @@
                 Source="ws.png"
                 HeightRequest="300"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+                SemanticProperties.Description="Weather service logo" />
 
             <Label
                 Text="Project Part B - Weather Service"
@@ -30,12 +30,12 @@
                 Text="Nr of items read from service"
                 FontSize="16" />
 
-            <Button
+            <!--<Button
                 x:Name="CounterBtn"
                 Text="Click me" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill" />-->
         </VerticalStackLayout>
     </ScrollView>
 
