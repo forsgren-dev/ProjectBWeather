@@ -9,12 +9,12 @@
 			
 
 			<Label
-                Text="TESTING TESTING 123..."
+                Text="Weather in Maui"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
 			<Label
-                Text="Welcome to .NET Maui Weather Service!"
+                Text="This is a simple Maui application based on the console weather service made in Project Part A. Select a city and give it a try!"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to Weather Service" />
