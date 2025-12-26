@@ -19,7 +19,7 @@ namespace MauiProjectBWeather
 
             try
             {
-                var forecast = await _service.GetForecastAsync("Stockholm");
+                var forecast = await _service.GetForecastAsync("Uppsala");
                 ServiceLabel.Text = $"{forecast.Items.Count} forcast items read.";
             }
             catch (Exception ex)
@@ -29,16 +29,16 @@ namespace MauiProjectBWeather
         }
 
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+        //private void OnCounterClicked(object sender, EventArgs e)
+        //{
+        //    count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        //    if (count == 1)
+        //        CounterBtn.Text = $"Clicked {count} time";
+        //    else
+        //        CounterBtn.Text = $"Clicked {count} times";
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        //    SemanticScreenReader.Announce(CounterBtn.Text);
+        //}
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using MauiProjectBWeather.Models;
+using MauiProjectBWeather.Services;
+using Microsoft.Maui.Graphics.Text;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
-using MauiProjectBWeather.Models;
-using MauiProjectBWeather.Services;
 
 namespace MauiProjectBWeather.Views
 {
@@ -34,7 +34,7 @@ namespace MauiProjectBWeather.Views
             base.OnAppearing();
             Title = $"Forecast for {_city.Name}";
 
-            MainThread.BeginInvokeOnMainThread(async () => {await LoadForecast();});
+            MainThread.BeginInvokeOnMainThread(async () => {await LoadForecast(); await ShowForecast();});
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -44,6 +44,26 @@ namespace MauiProjectBWeather.Views
         private async Task LoadForecast()
         {
             Forecast forecast = await _service.GetForecastAsync(_city.Name);
+
+        }
+
+        private async Task ShowForecast()
+        {
+            Forecast forecast = await _service.GetForecastAsync(_city.Name);
+
+            var groupedForecast = new GroupedForecast
+            {
+                City = forecast.City,
+                Items = forecast.Items
+                .OrderBy(d => d.DateTime)
+                .GroupBy(g => g.DateTime.Date)
+                .OrderBy(g => g.Key) 
+                .ToList()
+
+            };
+
+            GroupedForecast.ItemsSource = groupedForecast.Items;
+
         }
     }
 }
