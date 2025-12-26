@@ -1,6 +1,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiProjectBWeather.Views.AboutPage">
+             x:Class="MauiProjectBWeather.Views.AboutPage"
+             BackgroundColor="White"
+             Shell.BackgroundColor="CornflowerBlue"
+             Shell.TitleColor="White">
     
     <Grid RowDefinitions="Auto,*">
 

@@ -19,14 +19,7 @@ namespace MauiProjectBWeather
                 };
                 this.Items.Add(sc);
             }
-            //var city = CityPicture.List.First();
-            //var sc = new ShellContent
-            //{
-            //    Title = city.Name,
-            //    Route = city.ImageSrc.ToLower().Replace(".jpg", null),
-            //    ContentTemplate = new DataTemplate(() => new ForecastPage(city))
-            //};
-            //this.Items.Add(sc);
+            
         }
     }
 }
