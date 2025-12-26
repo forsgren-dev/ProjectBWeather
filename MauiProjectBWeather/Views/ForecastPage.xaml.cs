@@ -34,7 +34,10 @@ namespace MauiProjectBWeather.Views
             base.OnAppearing();
             Title = $"Forecast for {_city.Name}";
 
-            MainThread.BeginInvokeOnMainThread(async () => {await LoadForecast(); await ShowForecast();});
+            var picture = CityPicture.List.FirstOrDefault(c => c.Name == _city.Name);
+            CityImage.Source = picture?.ImageSrc ?? "default_city.jpg";
+
+            MainThread.BeginInvokeOnMainThread(async () => {await LoadForecast();});
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -44,22 +47,19 @@ namespace MauiProjectBWeather.Views
         private async Task LoadForecast()
         {
             Forecast forecast = await _service.GetForecastAsync(_city.Name);
-
+            await ShowForecast(forecast);
         }
 
-        private async Task ShowForecast()
+        private async Task ShowForecast(Forecast forecast)
         {
-            Forecast forecast = await _service.GetForecastAsync(_city.Name);
-
             var groupedForecast = new GroupedForecast
             {
                 City = forecast.City,
                 Items = forecast.Items
-                .OrderBy(d => d.DateTime)
+                .OrderBy(g => g.DateTime)
                 .GroupBy(g => g.DateTime.Date)
-                .OrderBy(g => g.Key) 
+                .OrderBy(g => g.Key)
                 .ToList()
-
             };
 
             GroupedForecast.ItemsSource = groupedForecast.Items;

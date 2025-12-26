@@ -5,6 +5,12 @@
              x:Class="MauiProjectBWeather.Views.ForecastPage">
     <ContentPage.Content>
         <StackLayout>
+            <Image x:Name="CityImage"
+               HeightRequest="160"
+               WidthRequest="160"
+               Aspect="AspectFill"
+                   HorizontalOptions="Start"
+               Margin="15,0,0,10" />
             <Button Text="Refresh" Clicked="Button_Clicked" />
             <ListView x:Name="GroupedForecast" IsGroupingEnabled="true" HasUnevenRows="true">
                 <ListView.GroupHeaderTemplate>
