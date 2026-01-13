@@ -51,7 +51,7 @@ namespace MauiProjectBWeather.Services
                     DateTime = UnixTimeStampToDateTime(wdle.dt),
                     Temperature = wdle.main.temp,
                     WindSpeed = wdle.wind.speed,
-                    Description = wdle.weather.First().description,
+                    Description = char.ToUpper(wdle.weather.First().description[0]) + wdle.weather.First().description.Substring(1),
                     Icon = $"https://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
                 }).ToList()
             };
