@@ -32,8 +32,8 @@ namespace MauiProjectBWeather.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Title = $"Forecast for {_city.Name}";
-
+            Title = $"Forecast";
+            ForecastHeader.Text = $"Forecast for {_city.Name}";
             var picture = CityPicture.List.FirstOrDefault(c => c.Name == _city.Name);
             CityImage.Source = picture?.ImageSrc ?? "default_city.jpg";
 

@@ -8,12 +8,21 @@
              Shell.TitleColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Image x:Name="CityImage"
-               HeightRequest="160"
-               WidthRequest="160"
-               Aspect="AspectFill"
+            <HorizontalStackLayout
+                HorizontalOptions="FillAndExpand">
+                <Image x:Name="CityImage"
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   Aspect="AspectFill"
                    HorizontalOptions="Start"
-              Margin="0,0,0,8" />
+                   Margin="0,0,50,8" />
+                <Label 
+                    x:Name="ForecastHeader"
+                    FontSize="Header"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                </Label>
+            </HorizontalStackLayout>
             <Button Text="Refresh" Clicked="Button_Clicked" />
             <ListView x:Name="GroupedForecast" IsGroupingEnabled="true" HasUnevenRows="true">
                 <ListView.GroupHeaderTemplate>
