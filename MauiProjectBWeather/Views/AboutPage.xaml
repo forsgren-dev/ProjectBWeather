@@ -24,7 +24,6 @@
 		<VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-			
 
 			<Label
                 Text="Weather in Maui"
@@ -40,7 +39,7 @@
 			<Label
                 x:Name="CreatedByLabel"
                 Style="{StaticResource SubHeadline}"
-                Text="Created by Erik Forsgren"
+                Text="Developer: Erik Forsgren"
                 FontSize="16" />
 
 			
