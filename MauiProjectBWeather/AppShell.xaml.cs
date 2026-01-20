@@ -13,7 +13,7 @@ namespace MauiProjectBWeather
             {
                 var sc = new ShellContent
                 {
-                    Title = city.Name,
+                    Title = $"☀️ {city.Name}",
                     Route = city.ImageSrc.ToLower().Replace(".jpg", null),
                     ContentTemplate = new DataTemplate(() => new ForecastPage(city))
                 };

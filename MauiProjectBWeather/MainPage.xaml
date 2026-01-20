@@ -4,7 +4,7 @@
              x:Class="MauiProjectBWeather.MainPage"
              BackgroundColor="White"
              Shell.BackgroundColor="CornflowerBlue"
-             Shell.TitleColor="White">
+             Shell.TitleColor="White" Title="ProjectB: Weather">
 
     <ScrollView>
         <VerticalStackLayout

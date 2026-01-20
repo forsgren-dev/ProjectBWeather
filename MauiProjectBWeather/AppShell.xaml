@@ -9,23 +9,15 @@
     Title="MauiProjectBWeather">
 
     <ShellContent
-        Title="Home"
+        Title="⚫ Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="mauihello" />
 
     <ShellContent
-        Title="About"
+        Title="⚫ About"
         ContentTemplate="{DataTemplate views:AboutPage}"
         Route="about" />
 
-    <!-- Alternativt en utskriven meny överst: -->
-    <!--<FlyoutItem Title="Home">
-        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="mauihello" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="About">
-        <ShellContent ContentTemplate="{DataTemplate views:AboutPage}" Route="about" />
-    </FlyoutItem>-->
 
 </Shell>
 

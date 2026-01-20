@@ -3,7 +3,7 @@
              x:Class="MauiProjectBWeather.Views.AboutPage"
              BackgroundColor="White"
              Shell.BackgroundColor="CornflowerBlue"
-             Shell.TitleColor="White">
+             Shell.TitleColor="White" Title="About">
     
     <Grid RowDefinitions="Auto,*">
 
