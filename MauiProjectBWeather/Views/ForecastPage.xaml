@@ -10,12 +10,14 @@
         <StackLayout>
             <HorizontalStackLayout
                 HorizontalOptions="FillAndExpand">
+                
                 <Image x:Name="CityImage"
                    HeightRequest="160"
                    WidthRequest="160"
                    Aspect="AspectFill"
-                   HorizontalOptions="Start"
-                   Margin="0,0,50,8" />
+                   HorizontalOptions="Center"
+                   Margin="10,10,30,8" />
+               
                 <Label 
                     x:Name="ForecastHeader"
                     FontSize="Header"
@@ -23,13 +25,13 @@
                     VerticalOptions="Center">
                 </Label>
             </HorizontalStackLayout>
-            <Button Text="Refresh" Clicked="Button_Clicked" />
+            <Button Text="Refresh" Clicked="Button_Clicked" Margin="200,10,40,-40" TranslationY="-62" BackgroundColor="SteelBlue"/>
             <ListView x:Name="GroupedForecast" IsGroupingEnabled="true" HasUnevenRows="true">
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell Height="40">
-                            <Grid HeightRequest="40" BackgroundColor="White" Padding="5">
-                                <Label FontSize="16" TextColor="Blue" VerticalOptions="Center" Text="{Binding Key, StringFormat='{0:D}'}" />
+                            <Grid HeightRequest="40" BackgroundColor="CornflowerBlue" Padding="5">
+                                <Label FontSize="16" TextColor="White" VerticalOptions="Center" Text="{Binding Key, StringFormat='{0:D}'}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -40,11 +42,11 @@
                             <Grid ColumnDefinitions="Auto,*" Padding="3">
                                 <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="50" VerticalOptions="Start" Margin="0,3,0,3"/>
                                 <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto" Padding="5">
-                                    <Label Grid.Row="0" FontSize="12" FontAttributes="Bold" Text="{Binding DateTime, StringFormat='{0:t}'}"/>
-                                    <Label Grid.Row="1" FontAttributes="Bold" Text="{Binding Description}"/>
+                                    <Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="{Binding DateTime, StringFormat='{0:t} -'}"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Margin="65,0" FontSize="18" FontAttributes="Bold" Text="{Binding Description}"/>
                                     <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto">
-                                        <Label Grid.Column="0" Text="{Binding Temperature, StringFormat='Temperature: {0}°C'}" Margin="0,0,10,0"/>
-                                        <Label Grid.Column="1" Text="{Binding WindSpeed, StringFormat='Windspeed: {0}m/s'}"/>
+                                        <Label Grid.Column="0" FontSize="16" Text="{Binding Temperature, StringFormat='Temperature: {0}°C'}" Margin="0,0,10,0"/>
+                                        <Label Grid.Column="1" FontSize="16" Text="{Binding WindSpeed, StringFormat='Windspeed: {0}m/s'}"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
