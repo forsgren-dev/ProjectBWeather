@@ -8,7 +8,7 @@
     <Grid RowDefinitions="Auto,*">
 
         <Border Grid.Row="0"
-                BackgroundColor="MediumBlue"
+                BackgroundColor="SteelBlue"
                 Padding="0,18"
                 StrokeThickness="0">
             

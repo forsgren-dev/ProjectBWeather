@@ -21,8 +21,8 @@
                 <Label 
                     x:Name="ForecastHeader"
                     FontSize="Header"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center">
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
                 </Label>
             </HorizontalStackLayout>
             <Button Text="Refresh" Clicked="Button_Clicked" Margin="200,10,40,-40" TranslationY="-62" BackgroundColor="SteelBlue"/>
